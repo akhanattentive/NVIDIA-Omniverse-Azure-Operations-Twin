@@ -52,11 +52,8 @@ deps/**/user.toml
 /scripts/swa-cli.config.json
 
 
-
-
-
-
-
+/backend/proxyapi/bin
+/backend/proxyapi/obj
 
 
 .env
