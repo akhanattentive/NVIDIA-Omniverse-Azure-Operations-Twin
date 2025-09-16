@@ -67,11 +67,11 @@ resource vnet 'Microsoft.Network/virtualNetworks@2023-09-01' existing = {
 }
 
 resource appGwMsi 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-07-31-preview' existing = {
-  name: 'msi-appgw'
+  name: 'msi-appgw-02'
 }
 
 resource apimMsi 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-07-31-preview' existing = {
-  name: 'msi-apim'
+  name: 'msi-apim-02'
 }
 
 resource keyVault 'Microsoft.KeyVault/vaults@2024-04-01-preview' existing = {
@@ -80,7 +80,7 @@ resource keyVault 'Microsoft.KeyVault/vaults@2024-04-01-preview' existing = {
 
 resource staticWebApp 'Microsoft.Web/staticSites@2023-12-01' = {
   name: staticWebAppName
-  location: location
+  location: 'eastus2'
   properties: {}
   sku: {
       name: 'Standard'
@@ -566,7 +566,7 @@ resource httpApiOptions 'Microsoft.ApiManagement/service/apis/operations@2024-06
 
 resource aks 'Microsoft.ContainerService/managedClusters@2024-06-02-preview' = {
   name: aksClusterName
-  location: location
+  location: 'eastus'
   identity: {
     type: 'SystemAssigned'
   }
